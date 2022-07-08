@@ -12,11 +12,7 @@ const AllMovies = ({ movies }) => {
       />
     );
   });
-  return (
-    <div>
-      <p>{allMovies} </p>
-    </div>
-  );
+  return <div className="all-movies">{allMovies}</div>;
 };
 
 export default AllMovies;

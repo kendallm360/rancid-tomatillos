@@ -1,10 +1,11 @@
 import React from "react";
+import "./MovieCard.css";
 
-const MovieCard = ({ title }) => {
+const MovieCard = ({ title, poster }) => {
   return (
-    <div>
-      {/* <h1>{}</h1>
-      <img src={poster} /> */}
+    <div className="movies">
+      <h1>{title}</h1>
+      <img src={poster} alt="Picture of the movies official poster" />
     </div>
   );
 };

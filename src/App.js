@@ -14,9 +14,10 @@ class App extends Component {
     // console.log(this.state.movieList);
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App-header"></header>
+        <body>
           <AllMovies movies={this.state.movieList} />
-        </header>
+        </body>
       </div>
     );
   }
