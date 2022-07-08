@@ -3,6 +3,7 @@ import "./App.css";
 import movieData from "./MovieData";
 import AllMovies from "./components/AllMovies";
 import NavBar from "./components/NavBar";
+import MovieDetail from "./components/MovieDetail";
 
 class App extends Component {
   constructor() {
@@ -11,6 +12,12 @@ class App extends Component {
       movieList: movieData.movies,
     };
   }
+
+  handleClick = () => {
+    console.log("hey");
+    return <MovieDetail />;
+  };
+
   render() {
     // console.log(this.state.movieList);
     return (
@@ -19,7 +26,11 @@ class App extends Component {
           <NavBar />
         </header>
         <body>
-          <AllMovies movies={this.state.movieList} />
+          <AllMovies
+            movies={this.state.movieList}
+            handleClick={this.handleClick}
+          />
+          {/* <MovieDetail /> */}
         </body>
       </div>
     );
