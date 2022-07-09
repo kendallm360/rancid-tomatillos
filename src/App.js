@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       movieList: [],
       isClicked: false,
-      singleMovie: SingleMovie,
+      singleMovie: {},
       isError: false,
       errorMessage: "",
     };
@@ -34,10 +34,17 @@ class App extends Component {
       });
   };
 
-  handleClick = () => {
-    this.setState((prevState) => {
-      return { ...prevState, isClicked: true };
-    });
+  handleClick = (event) => {
+    // [event.currentTarget.id] = event.target;
+    fetch(
+      `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState((prevState) => {
+          return { ...prevState, isClicked: true, singleMovie: data.movie };
+        });
+      });
   };
 
   displayHome = () => {

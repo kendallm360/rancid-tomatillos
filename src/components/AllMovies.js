@@ -9,6 +9,7 @@ const AllMovies = ({ movies, handleClick }) => {
         title={movie.title}
         poster={movie.poster_path}
         key={movie.id}
+        id={movie.id}
         handleClick={handleClick}
       />
     );
