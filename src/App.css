@@ -30,6 +30,11 @@ body {
   color: #61dafb;
 }
 
+.fake-movie {
+  width: 300px;
+  height: 300px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

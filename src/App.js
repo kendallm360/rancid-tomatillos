@@ -23,8 +23,13 @@ class App extends Component {
     });
   };
 
+  displayHome = () => {
+    this.setState((prevState) => {
+      return { ...prevState, isClicked: false };
+    });
+  };
+
   render() {
-    // console.log(this.state.movieList);
     return (
       <div className="App">
         <header className="App-header">
@@ -32,7 +37,10 @@ class App extends Component {
         </header>
         <body>
           {this.state.isClicked && (
-            <MovieDetail singleMovie={this.state.singleMovie} />
+            <MovieDetail
+              singleMovie={this.state.singleMovie}
+              displayHome={this.displayHome}
+            />
           )}
           {!this.state.isClicked && (
             <AllMovies
