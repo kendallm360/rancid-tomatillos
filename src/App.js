@@ -4,18 +4,23 @@ import movieData from "./MovieData";
 import AllMovies from "./components/AllMovies";
 import NavBar from "./components/NavBar";
 import MovieDetail from "./components/MovieDetail";
+import SingleMovie from "./singleMovie";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movieList: movieData.movies,
+      isClicked: false,
+      singleMovie: SingleMovie,
     };
   }
 
   handleClick = () => {
-    console.log("hey");
-    return <MovieDetail />;
+    console.log("hello");
+    this.setState((prevState) => {
+      return { ...prevState, isClicked: true };
+    });
   };
 
   render() {
@@ -26,11 +31,15 @@ class App extends Component {
           <NavBar />
         </header>
         <body>
-          <AllMovies
-            movies={this.state.movieList}
-            handleClick={this.handleClick}
-          />
-          {/* <MovieDetail /> */}
+          {this.state.isClicked && (
+            <MovieDetail singleMovie={this.state.singleMovie} />
+          )}
+          {!this.state.isClicked && (
+            <AllMovies
+              movies={this.state.movieList}
+              handleClick={this.handleClick}
+            />
+          )}
         </body>
       </div>
     );
