@@ -18,6 +18,10 @@ class App extends Component {
     };
   }
 
+  // randomNum = () => {
+    
+  // }
+
   componentDidMount = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
       .then((response) => response.json())
@@ -66,7 +70,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <NavBar />
+          <NavBar isClicked={this.state.isClicked} displayHome={this.displayHome}/>
         </header>
         <body>
           {this.state.isClicked && (
