@@ -12,6 +12,7 @@ class App extends Component {
       movieList: [],
       isClicked: false,
       singleMovie: {},
+      movieVideos:[],
       isError: false,
       errorMessage: "",
     };
@@ -45,6 +46,14 @@ class App extends Component {
           return { ...prevState, isClicked: true, singleMovie: data.movie };
         });
       });
+
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}/videos`)
+      .then((response) => response.json())
+      .then(data => {
+        this.setState(prevState => {
+          return { ...prevState, movieVideos: data.videos}
+        })
+      })
   };
 
   displayHome = () => {
@@ -64,6 +73,7 @@ class App extends Component {
             <MovieDetail
               singleMovie={this.state.singleMovie}
               displayHome={this.displayHome}
+              videos={this.state.movieVideos}
             />
           )}
           {!this.state.isClicked && (

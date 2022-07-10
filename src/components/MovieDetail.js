@@ -1,6 +1,8 @@
 import React from "react";
 
-const MovieDetail = ({ singleMovie, displayHome }) => {
+const MovieDetail = ({ singleMovie, displayHome, videos }) => {
+  const videoUrl = `https://www.youtube.com/embed/${videos[0].key}`
+  console.log(videos)
   return (
     <div>
       <button onClick={displayHome}>Home</button>
@@ -10,6 +12,7 @@ const MovieDetail = ({ singleMovie, displayHome }) => {
         src={singleMovie.poster_path}
         alt="Official movie poster"
       />
+      <iframe src={videoUrl}></iframe>
       <p>{singleMovie.release_date}</p>
       <p>{singleMovie.overview}</p>
       <p>{singleMovie.average_rating}</p>
