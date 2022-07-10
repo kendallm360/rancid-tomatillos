@@ -14,7 +14,13 @@ const AllMovies = ({ movies, handleClick }) => {
       />
     );
   });
-  return <div className="all-movies">{allMovies}</div>;
+  return (
+    <div className="all-movies">
+      <div className="all-movies-wrapper">
+        {allMovies}
+      </div>
+    </div>
+  ) 
 };
 
 export default AllMovies;

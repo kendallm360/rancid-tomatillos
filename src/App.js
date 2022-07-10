@@ -12,10 +12,15 @@ class App extends Component {
       movieList: [],
       isClicked: false,
       singleMovie: {},
+      movieVideos:[],
       isError: false,
       errorMessage: "",
     };
   }
+
+  // randomNum = () => {
+    
+  // }
 
   componentDidMount = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
@@ -45,6 +50,14 @@ class App extends Component {
           return { ...prevState, isClicked: true, singleMovie: data.movie };
         });
       });
+
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}/videos`)
+      .then((response) => response.json())
+      .then(data => {
+        this.setState(prevState => {
+          return { ...prevState, movieVideos: data.videos}
+        })
+      })
   };
 
   displayHome = () => {
@@ -57,13 +70,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <NavBar />
+          <NavBar isClicked={this.state.isClicked} displayHome={this.displayHome}/>
         </header>
         <body>
           {this.state.isClicked && (
             <MovieDetail
               singleMovie={this.state.singleMovie}
               displayHome={this.displayHome}
+              videos={this.state.movieVideos}
             />
           )}
           {!this.state.isClicked && (
