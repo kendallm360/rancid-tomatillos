@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import movieData from "./MovieData";
 import AllMovies from "./components/AllMovies";
 import NavBar from "./components/NavBar";
 import MovieDetail from "./components/MovieDetail";
@@ -10,17 +9,42 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movieList: movieData.movies,
+      movieList: [],
       isClicked: false,
-      singleMovie: SingleMovie,
+      singleMovie: {},
+      isError: false,
+      errorMessage: "",
     };
   }
 
-  handleClick = () => {
-    console.log("hello");
-    this.setState((prevState) => {
-      return { ...prevState, isClicked: true };
-    });
+  componentDidMount = () => {
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("hey");
+        this.setState((prevState) => {
+          return { ...prevState, movieList: data.movies };
+        });
+      })
+      .catch((error) => {
+        console.log(`${error}`);
+        this.setState((prevState) => {
+          return { ...prevState, isError: true, errorMessage: error };
+        });
+      });
+  };
+
+  handleClick = (event) => {
+    // [event.currentTarget.id] = event.target;
+    fetch(
+      `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState((prevState) => {
+          return { ...prevState, isClicked: true, singleMovie: data.movie };
+        });
+      });
   };
 
   displayHome = () => {
@@ -48,6 +72,7 @@ class App extends Component {
               handleClick={this.handleClick}
             />
           )}
+          {this.state.isError && <h2>{`${this.state.errorMessage}`}</h2>}
         </body>
       </div>
     );
