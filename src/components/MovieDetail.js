@@ -24,7 +24,6 @@ const MovieDetail = ({ singleMovie, displayHome, videos }) => {
           <p>{singleMovie.tagline}</p>
           <br></br>
           </div>}
-
           <h3>Description</h3>
           <p>{singleMovie.overview}</p>
           <iframe src={videoUrl}></iframe>
