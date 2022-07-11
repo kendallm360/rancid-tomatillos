@@ -2,10 +2,13 @@ import React from "react";
 import "./MovieDetail.css";
 
 const MovieDetail = ({ singleMovie, displayHome, videos }) => {
-  const videoUrl = `https://www.youtube.com/embed/${videos[0].key}`
-  console.log(videos)
+  const videoUrl = `https://www.youtube.com/embed/${videos[0].key}`;
+  // console.log(videos)
   return (
-    <section className="movie-detail" style={{backgroundImage: `url(${singleMovie.poster_path})`}}>
+    <section
+      className="movie-detail"
+      style={{ backgroundImage: `url(${singleMovie.poster_path})` }}
+    >
       <section className="movie-detail-wrapper">
         <div className="movie-title">
           <img
@@ -18,12 +21,13 @@ const MovieDetail = ({ singleMovie, displayHome, videos }) => {
           <p>{singleMovie.genres}</p>
         </div>
         <div className="movie-description">
-          {singleMovie.tagline != "" && 
-          <div>
-          <h3>Tagline</h3>
-          <p>{singleMovie.tagline}</p>
-          <br></br>
-          </div>}
+          {singleMovie.tagline != "" && (
+            <div>
+              <h3>Tagline</h3>
+              <p>{singleMovie.tagline}</p>
+              <br></br>
+            </div>
+          )}
 
           <h3>Description</h3>
           <p>{singleMovie.overview}</p>
