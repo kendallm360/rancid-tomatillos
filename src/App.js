@@ -3,7 +3,6 @@ import "./App.css";
 import AllMovies from "./components/AllMovies";
 import NavBar from "./components/NavBar";
 import MovieDetail from "./components/MovieDetail";
-import SingleMovie from "./singleMovie";
 import { Route } from "react-router-dom";
 
 class App extends Component {
@@ -18,10 +17,6 @@ class App extends Component {
       errorMessage: "",
     };
   }
-
-  // randomNum = () => {
-
-  // }
 
   componentDidMount = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
