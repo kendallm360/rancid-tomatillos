@@ -6,7 +6,7 @@ import MovieCard from "./MovieCard";
 const AllMovies = ({ movies, handleClick }) => {
   let allMovies = movies.map((movie) => {
     return (
-      <NavLink to="/movie-details" className="Nav">
+      <NavLink to={`/movie-${movie.id}`} className="Nav" key={movie.id}>
         <MovieCard
           title={movie.title}
           poster={movie.poster_path}

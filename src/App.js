@@ -35,7 +35,6 @@ class App extends Component {
   };
 
   handleClick = (event) => {
-    // [event.currentTarget.id] = event.target;
     fetch(
       `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}`
     )
@@ -74,25 +73,7 @@ class App extends Component {
         </header>
         <aside>
           <Route
-            path="/movie-details"
-            render={() => {
-              return (
-                <MovieDetail
-                  singleMovie={this.state.singleMovie}
-                  displayHome={this.displayHome}
-                  videos={this.state.movieVideos}
-                />
-              );
-            }}
-          />
-          {/* {this.state.isClicked && (
-            <MovieDetail
-              singleMovie={this.state.singleMovie}
-              displayHome={this.displayHome}
-              videos={this.state.movieVideos}
-            />
-          )} */}
-          <Route
+            exact
             path="/"
             render={() => {
               return (
@@ -103,12 +84,13 @@ class App extends Component {
               );
             }}
           />
-          {/* {!this.state.isClicked && (
-            <AllMovies
-              movies={this.state.movieList}
-              handleClick={this.handleClick}
-            />
-          )} */}
+          <Route
+            exact
+            path="/movie-:id"
+            render={({ match }) => {
+              return <MovieDetail id={match.params.id} />;
+            }}
+          />
           {this.state.isError && <h2>{`${this.state.errorMessage}`}</h2>}
         </aside>
       </main>
