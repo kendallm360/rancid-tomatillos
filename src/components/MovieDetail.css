@@ -1,7 +1,3 @@
-iframe {
-  height: 230px;
-  width: 420px;
-}
 
 .movie-detail {
   background-color: black;
@@ -42,3 +38,8 @@ iframe {
 .movie-details {
   width: 25%;
 }
+
+/* iframe {
+  height: 230px;
+  width: 420px;
+} */
