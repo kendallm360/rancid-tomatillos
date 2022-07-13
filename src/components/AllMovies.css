@@ -1,13 +1,14 @@
 .all-movies {
+  background-color: black;
   /* padding: 20px; */
-  /* width: 1000px; */
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: black;
 }
 
 .all-movies-wrapper {
+  background-color: #636363;
+  border-radius: 20px;
   margin-top: 30px;
   padding: 15px;
   width: 80%;
@@ -15,6 +16,4 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #636363;
-  border-radius: 20px;
 }
