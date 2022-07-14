@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./MovieDetail.css";
+import VideoPlayer from "./VideoPlayer";
 
 class MovieDetail extends Component {
   constructor() {
     super();
     this.state = {
       movie: {},
-      movieVideos: [],
+      movieVideos: null,
       isError: false,
       errorMessage: "",
     };
@@ -66,7 +67,7 @@ class MovieDetail extends Component {
 
             <h3>Description</h3>
             <p>{this.state.movie.overview}</p>
-            {/* {videos && <iframe src={videoUrl}></iframe>} */}
+            <VideoPlayer urls={this.state.movieVideos} />
           </div>
           <div className="movie-details">
             <h3>Release Date</h3>
