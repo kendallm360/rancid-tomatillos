@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/vies")
       .then((response) => {
         if (!response.ok) {
           console.log(response);
@@ -86,6 +86,7 @@ class App extends Component {
                 <AllMovies
                   movies={this.state.movieList}
                   handleClick={this.handleClick}
+                  errorHandling={this.state.errorMessage}
                 />
               );
             }}
@@ -97,7 +98,7 @@ class App extends Component {
               return <MovieDetail id={match.params.id} />;
             }}
           />
-          {this.state.errorMessage && <h2>{`${this.state.errorMessage}`}</h2>}
+          {/* {this.state.errorMessage && <h2>{`${this.state.errorMessage}`}</h2>} */}
         </aside>
       </main>
     );
