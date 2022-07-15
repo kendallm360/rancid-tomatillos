@@ -24,7 +24,6 @@ class MovieDetail extends Component {
           return response.json();
         }
       })
-      // .then((response) => response.json())
       .then((data) => {
         this.setState((prevState) => {
           return { ...prevState, movie: data.movie };
@@ -48,7 +47,6 @@ class MovieDetail extends Component {
           return response.json();
         }
       })
-      // .then((response) => response.json())
       .then((data) => {
         this.setState((prevState) => {
           return { ...prevState, movieVideos: data.videos };
@@ -62,10 +60,6 @@ class MovieDetail extends Component {
       });
   };
 
-  // let videoUrl;
-  // if (videos) {
-  //   videoUrl = `https://www.youtube.com/embed/${videos[0].key}`;
-  // }
   render() {
     return (
       <section
@@ -94,7 +88,6 @@ class MovieDetail extends Component {
                     <br></br>
                   </div>
                 )}
-
                 <h3>Description</h3>
                 <p>{this.state.movie.overview}</p>
                 <VideoPlayer urls={this.state.movieVideos} />

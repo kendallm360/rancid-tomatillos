@@ -1,6 +1,5 @@
 import React from "react";
 import "./MovieCard.css";
-// import MovieDetail from "./MovieDetail";
 
 const MovieCard = ({ title, poster, handleClick, id }) => {
   return (
