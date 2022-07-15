@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./AllMovies.css";
 import MovieCard from "./MovieCard";
 
-const AllMovies = ({ movies, handleClick }) => {
+const AllMovies = ({ errorHandling, movies, handleClick }) => {
   let allMovies = movies.map((movie) => {
     return (
       <NavLink to={`/movie-${movie.id}`} className="Nav" key={movie.id}>
@@ -19,7 +19,10 @@ const AllMovies = ({ movies, handleClick }) => {
   });
   return (
     <div className="all-movies">
-      <div className="all-movies-wrapper">{allMovies}</div>
+      <div className="all-movies-wrapper">
+        {errorHandling && <div className="error">{`${errorHandling}`}</div>}
+        {allMovies}
+      </div>
     </div>
   );
 };

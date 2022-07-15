@@ -13,14 +13,20 @@ class App extends Component {
       isClicked: false,
       singleMovie: {},
       movieVideos: [],
-      isError: false,
-      errorMessage: "",
+      errorMessage: null,
     };
   }
 
   componentDidMount = () => {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then((response) => response.json())
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/vies")
+      .then((response) => {
+        if (!response.ok) {
+          console.log(response);
+          throw new Error(response.status + " " + response.statusText);
+        } else {
+          return response.json();
+        }
+      })
       .then((data) => {
         this.setState((prevState) => {
           return { ...prevState, movieList: data.movies };
@@ -29,32 +35,32 @@ class App extends Component {
       .catch((error) => {
         console.log(`${error}`);
         this.setState((prevState) => {
-          return { ...prevState, isError: true, errorMessage: error };
+          return { ...prevState, errorMessage: error };
         });
       });
   };
 
-  handleClick = (event) => {
-    fetch(
-      `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState((prevState) => {
-          return { ...prevState, isClicked: true, singleMovie: data.movie };
-        });
-      });
+  // handleClick = (event) => {
+  //   fetch(
+  //     `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       this.setState((prevState) => {
+  //         return { ...prevState, isClicked: true, singleMovie: data.movie };
+  //       });
+  //     });
 
-    fetch(
-      `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}/videos`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState((prevState) => {
-          return { ...prevState, movieVideos: data.videos };
-        });
-      });
-  };
+  //   fetch(
+  //     `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}/videos`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       this.setState((prevState) => {
+  //         return { ...prevState, movieVideos: data.videos };
+  //       });
+  //     });
+  // };
 
   displayHome = () => {
     this.setState((prevState) => {
@@ -80,6 +86,7 @@ class App extends Component {
                 <AllMovies
                   movies={this.state.movieList}
                   handleClick={this.handleClick}
+                  errorHandling={this.state.errorMessage}
                 />
               );
             }}
@@ -91,7 +98,7 @@ class App extends Component {
               return <MovieDetail id={match.params.id} />;
             }}
           />
-          {this.state.isError && <h2>{`${this.state.errorMessage}`}</h2>}
+          {/* {this.state.errorMessage && <h2>{`${this.state.errorMessage}`}</h2>} */}
         </aside>
       </main>
     );

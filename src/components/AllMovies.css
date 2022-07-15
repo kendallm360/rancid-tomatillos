@@ -1,9 +1,11 @@
 .all-movies {
   background-color: black;
   /* padding: 20px; */
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
+  /* overflow-y: scroll; */
 }
 
 .all-movies-wrapper {
@@ -16,4 +18,10 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.error {
+  font-size: 5em;
+  color: white;
+  height: 70vh;
 }
