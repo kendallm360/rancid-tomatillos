@@ -26,7 +26,11 @@ class MovieDetail extends Component {
       })
       .then((data) => {
         this.setState((prevState) => {
-          return { ...prevState, movie: data.movie };
+          return {
+            ...prevState,
+            movie: data.movie,
+            genre: data.movie.genres.map((genre) => genre).join(", "),
+          };
         });
       })
       .catch((error) => {
@@ -60,6 +64,28 @@ class MovieDetail extends Component {
       });
   };
 
+  displayBudget = () => {
+    if (this.state.movie.budget > 0) {
+      return (
+        <div>
+          <h3>Budget</h3>
+          <p>${this.state.movie.budget}</p>
+        </div>
+      );
+    }
+  };
+
+  displayRevenue = () => {
+    if (this.state.movie.revenue > 0) {
+      return (
+        <div>
+          <h3>Revenue</h3>
+          <p>${this.state.movie.revenue}</p>
+        </div>
+      );
+    }
+  };
+
   render() {
     return (
       <section
@@ -78,7 +104,7 @@ class MovieDetail extends Component {
                 />
                 <br></br>
                 <h1>{this.state.movie.title}</h1>
-                <p>{this.state.movie.genres}</p>
+                <p className="genres">{this.state.genre}</p>
               </div>
               <div className="movie-description">
                 {this.state.movie.tagline !== "" && (
@@ -90,19 +116,21 @@ class MovieDetail extends Component {
                 )}
                 <h3>Description</h3>
                 <p>{this.state.movie.overview}</p>
-                <VideoPlayer urls={this.state.movieVideos} />
+                <div className="trailer-video">
+                  <VideoPlayer urls={this.state.movieVideos} />
+                </div>
               </div>
               <div className="movie-details">
                 <h3>Release Date</h3>
                 <p>{this.state.movie.release_date}</p>
-                <h3>Budget</h3>
-                <p>${this.state.movie.budget}</p>
+                {this.displayBudget()}
                 <h3>Runtime</h3>
-                <p>{this.state.movie.runtime}</p>
-                <h3>Revenue</h3>
-                <p>${this.state.movie.revenue}</p>
+                <p>{this.state.movie.runtime} minutes</p>
+                {this.displayRevenue()}
                 <h3>Average Rating</h3>
-                <p>⭐️ {this.state.movie.average_rating}</p>
+                <p>
+                  ⭐️ {Math.round(this.state.movie.average_rating)} out of 10
+                </p>
               </div>
             </>
           )}

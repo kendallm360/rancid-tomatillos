@@ -10,7 +10,6 @@ class App extends Component {
     super();
     this.state = {
       movieList: [],
-      isClicked: false,
       singleMovie: {},
       movieVideos: [],
       errorMessage: null,
@@ -40,18 +39,11 @@ class App extends Component {
       });
   };
 
-  displayHome = () => {
-    this.setState((prevState) => {
-      return { ...prevState, isClicked: false };
-    });
-  };
-
   render() {
     return (
       <main className="App">
         <header className="App-header">
           <NavBar
-            isClicked={this.state.isClicked}
             displayHome={this.displayHome}
           />
         </header>

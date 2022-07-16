@@ -1,7 +1,6 @@
 .nav-bar {
   background-color: #636363;
   cursor: pointer;
-  padding: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
