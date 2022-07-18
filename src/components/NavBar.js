@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import rancid from "./rancid_toma.png";
+import rancid from "../rancid_toma.png";
 
 const NavBar = ({ displayHome }) => {
   return (
