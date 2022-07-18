@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About the Project</a></li>
+    <li><a href="#set-up">Set Up</a></li>
+    <li><a href="#application-in-action">Application in Action</a></li>
+    <li><a href="#contributors">Contributors</a></li>
+    <li><a href="#technologies-used">Technologies Used</a></li>
+    <li><a href="#organizational-resources">Organizational Resources</a></li>
+    <li><a href="#cypress-testing">Cypress Testing</a></li>
+  </ol>
+</details>
 
-## Available Scripts
+### About the Project
+Welcome to Rancid Tomatillos!
 
-In the project directory, you can run:
+    In this application, we were assigned to build an IMDB style application to display a 
+list of movies from an API given to us by Turing instructors. We were given a week and 
+a half to complete the website in React using Router, and testing with cypress, all new 
+tools for us that we were to learn for this project.
 
-### `npm start`
+    We were tasked with building a main page displaying all the movies as simplified cards,
+a details page where we display in depth information on a movie as chosen by the user. 
+we then were tasked with furthering our learning goals with some extensions, which we decided to embed trailers into our movie details page and extend our cypress testing to be more comprehensive.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Set Up
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Start by cloning down this repo to your local machine and cd into the directory.
+2. Once inside the directory run npm install. 
+3. Run npm start and you will see a message displaying the localhost port the app is running on. If it does not automatically open in the browser, navigate to the localhost address provided in your terminal.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Application in Action
 
-### `npm run build`
+Upon loading the application, you will see a page displaying all of the avalable movies.
+You can click on a movie's card to view its information, and even watch a trailer 
+for that movie. If you click on the header, it will take you to the main page again.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributors
 
-### `npm run eject`
+### [Dylan Duke](https://github.com/laytonmaes)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### [Kendall](https://github.com/kendallm360)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Project Manager - Scott Ertmer
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. JavaScript
+2. HTML
+3. CSS
+4. React
+5. Router
+6. Cypress
+7. Webpack
+9. NPM
+10. Figma and Figjam
 
-## Learn More
+## Organizational Resources
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project utlizes a simple and concise [figjam board](https://www.figma.com/file/YqhwZlTqNIZbO8a4peaPmg/Rancid-Tomatillos?node-id=0%3A1) to create an intial project board during the planning phase that was transfered over to [GitHubs project board](https://github.com/kendallm360/rotten-tomatillos/projects/1).  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The team then used figma to design a [wireframe](https://www.figma.com/file/6UkVkrxyQVjI2115GzNDyl/Rotten-tomatillos-2?node-id=0%3A1) for all of our different dashboard views. 
 
-### Code Splitting
+## Cypress Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+We tested our application with Cypress for full E2E testing. To set up Cypress:
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Cd into the rancid-tomatillos directory.
+2. Run npm install -D cypress.
+3. Then run npm run cypress
