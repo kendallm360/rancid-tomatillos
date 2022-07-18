@@ -70,6 +70,6 @@ We tested our application with Cypress for full E2E testing. To set up Cypress:
 
 ### [Dylan Duke](https://github.com/laytonmaes)
 
-### [Kendall](https://github.com/kendallm360)
+### [Kendall McGree](https://github.com/kendallm360)
 
 ### Project Manager - Scott Ertmer
