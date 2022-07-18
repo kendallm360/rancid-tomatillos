@@ -40,8 +40,7 @@ for that movie. If you click on the header, it will take you to the main page ag
 
 - React
 - React Router
-- React P
-- layer
+- React Player
 - JavaScript
 - HTML
 - CSS
