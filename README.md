@@ -25,12 +25,6 @@ tools for us that we were to learn for this project.
 a details page where we display in depth information on a movie as chosen by the user. 
 we then were tasked with furthering our learning goals with some extensions, which we decided to embed trailers into our movie details page and extend our cypress testing to be more comprehensive.
 
-## Set Up
-
-1. Start by cloning down this repo to your local machine and cd into the directory.
-2. Once inside the directory run npm install. 
-3. Run npm start and you will see a message displaying the localhost port the app is running on. If it does not automatically open in the browser, navigate to the localhost address provided in your terminal.
-
 
 ## Application in Action
 
@@ -38,15 +32,9 @@ Upon loading the application, you will see a page displaying all of the avalable
 You can click on a movie's card to view its information, and even watch a trailer 
 for that movie. If you click on the header, it will take you to the main page again.
 
+# Visualization
+- ![Demo of Site Features](https://media.giphy.com/media/SpfCbAfAPoQUyWlTqO/giphy.gif)
 
-
-## Contributors
-
-### [Dylan Duke](https://github.com/laytonmaes)
-
-### [Kendall](https://github.com/kendallm360)
-
-### Project Manager - Scott Ertmer
 
 ## Technologies Used
 
@@ -66,12 +54,20 @@ This project utlizes a simple and concise [figjam board](https://www.figma.com/f
 
 The team then used figma to design a [wireframe](https://www.figma.com/file/6UkVkrxyQVjI2115GzNDyl/Rotten-tomatillos-2?node-id=0%3A1) for all of our different dashboard views. 
 
+## Set Up
+The details and setup of this project are outline in [this project spec](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).
+
 ## Cypress Testing
 
 We tested our application with Cypress for full E2E testing. To set up Cypress:
-
 1. Cd into the rancid-tomatillos directory.
 2. Run npm install -D cypress.
 3. Then run npm run cypress
 
-- ![Demo of Site Features](./src/rancid_gif2.gif)
+## Contributors
+
+### [Dylan Duke](https://github.com/laytonmaes)
+
+### [Kendall](https://github.com/kendallm360)
+
+### Project Manager - Scott Ertmer
