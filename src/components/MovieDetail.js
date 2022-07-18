@@ -29,7 +29,9 @@ class MovieDetail extends Component {
           return {
             ...prevState,
             movie: data.movie,
-            genre: data.movie.genres.map((genre) => genre).join(", "),
+            genre: data.movie.genres.map((genre) => (
+              <button className="genre-tag">{genre}</button>
+            )),
           };
         });
       })
@@ -90,7 +92,7 @@ class MovieDetail extends Component {
     return (
       <section
         className="movie-detail"
-        style={{ backgroundImage: `url(${this.state.movie.poster_path})` }}
+        style={{ backgroundImage: `url(${this.state.movie.backdrop_path})` }}
       >
         <section className="movie-detail-wrapper">
           {this.state.errorMessage && <h2>{`${this.state.errorMessage}`}</h2>}

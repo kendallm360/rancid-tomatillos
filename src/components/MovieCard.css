@@ -1,5 +1,12 @@
 .movies {
-  background-color: #d4d4d4;
+  /* background-color: black; */
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #231557 100%
+  );
   border-radius: 10px;
   cursor: pointer;
   font-size: small;
@@ -14,3 +21,12 @@
 .movies:hover {
   transform: scale(1.05);
 }
+
+h1 {
+  color: #eee60d;
+  font-size: 24px;
+}
+
+/* .movie-title {
+  color: black;
+} */

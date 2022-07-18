@@ -1,5 +1,13 @@
 .all-movies {
+  /* border: 3px solid red; */
   background-color: black;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #231557 100%
+  );
   height: 100%;
   width: 100%;
   display: flex;
@@ -7,7 +15,14 @@
 }
 
 .all-movies-wrapper {
-  background-color: #636363;
+  background-color: black;
+  /* background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #231557 100%
+  ); */
   border-radius: 20px;
   margin-top: 30px;
   padding: 15px;

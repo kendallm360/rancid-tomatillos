@@ -6,7 +6,9 @@ const NavBar = ({ displayHome }) => {
   return (
     <Link to={"/"} className="Nav" key={Date.now()}>
       <div className="nav-bar">
-        <h1 onClick={displayHome}>Rancid Tomatillos</h1>
+        <h1 className="title" onClick={displayHome}>
+          Rancid Tomatillos
+        </h1>
       </div>
     </Link>
   );
