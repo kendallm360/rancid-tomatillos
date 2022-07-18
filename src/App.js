@@ -10,7 +10,6 @@ class App extends Component {
     super();
     this.state = {
       movieList: [],
-      isClicked: false,
       singleMovie: {},
       movieVideos: [],
       errorMessage: null,
@@ -18,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/vies")
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
       .then((response) => {
         if (!response.ok) {
           console.log(response);
@@ -40,40 +39,11 @@ class App extends Component {
       });
   };
 
-  // handleClick = (event) => {
-  //   fetch(
-  //     `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       this.setState((prevState) => {
-  //         return { ...prevState, isClicked: true, singleMovie: data.movie };
-  //       });
-  //     });
-
-  //   fetch(
-  //     `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.currentTarget.id}/videos`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       this.setState((prevState) => {
-  //         return { ...prevState, movieVideos: data.videos };
-  //       });
-  //     });
-  // };
-
-  displayHome = () => {
-    this.setState((prevState) => {
-      return { ...prevState, isClicked: false };
-    });
-  };
-
   render() {
     return (
       <main className="App">
         <header className="App-header">
           <NavBar
-            isClicked={this.state.isClicked}
             displayHome={this.displayHome}
           />
         </header>
@@ -98,7 +68,6 @@ class App extends Component {
               return <MovieDetail id={match.params.id} />;
             }}
           />
-          {/* {this.state.errorMessage && <h2>{`${this.state.errorMessage}`}</h2>} */}
         </aside>
       </main>
     );

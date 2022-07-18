@@ -1,6 +1,8 @@
 body {
+  font-family: "Trebuchet MS", sans-serif;
   width: 100%;
 }
+
 .App {
   text-align: center;
 }

@@ -1,9 +1,24 @@
+.title {
+  color: #eee60d;
+  font-size: 80px;
+  font-family: "Trebuchet MS", sans-serif;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
 .nav-bar {
-  background-color: #636363;
+  background-color: black;
   cursor: pointer;
-  padding: 30px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.rancid {
+  height: 5em;
+  width: 7em;
 }
