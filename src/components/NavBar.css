@@ -23,6 +23,7 @@
 .title {
   color: #eee60d;
   font-size: 80px;
+  font-family: "Trebuchet MS", sans-serif;
 }
 @keyframes textclip {
   to {
@@ -35,6 +36,11 @@
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.rancid {
+  height: 5em;
+  width: 7em;
 }

@@ -1,3 +1,19 @@
+h1 {
+  font-size: 2em;
+}
+
+h2,
+h3 {
+  color: #eee60d;
+}
+
+p {
+  color: rgb(237, 205, 251);
+  font-style: italic;
+  font-size: 1em;
+  font-weight: 900;
+}
+
 .movie-detail {
   background-color: black;
   background-position: center;
@@ -9,7 +25,6 @@
 }
 
 .movie-detail-wrapper {
-  /* background-color: #636363; */
   background-image: linear-gradient(
     -225deg,
     #231557 0%,
@@ -25,6 +40,7 @@
   width: 80vw;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .movie-poster {
@@ -35,6 +51,13 @@
 .movie-title {
   margin-top: 20px;
   width: 25%;
+}
+
+.genre-tag {
+  background-color: transparent;
+  border-radius: 3em;
+  color: #eee60d;
+  margin: 0.3em;
 }
 
 .movie-description {

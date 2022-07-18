@@ -111,12 +111,12 @@ class MovieDetail extends Component {
               <div className="movie-description">
                 {this.state.movie.tagline !== "" && (
                   <div>
-                    <h3>Tagline</h3>
-                    <p>{this.state.movie.tagline}</p>
+                    {/* <h3>Tagline</h3> */}
+                    <h2>{this.state.movie.tagline}</h2>
                     <br></br>
                   </div>
                 )}
-                <h3>Description</h3>
+                <h3>Synopsis</h3>
                 <p>{this.state.movie.overview}</p>
                 <div className="trailer-video">
                   <VideoPlayer urls={this.state.movieVideos} />
