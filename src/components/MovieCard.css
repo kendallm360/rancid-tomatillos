@@ -1,5 +1,4 @@
 .movies {
-  /* background-color: black; */
   background-image: linear-gradient(
     -225deg,
     #231557 0%,
@@ -26,7 +25,3 @@ h1 {
   color: #eee60d;
   font-size: 24px;
 }
-
-/* .movie-title {
-  color: black;
-} */

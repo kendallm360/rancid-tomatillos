@@ -1,5 +1,4 @@
 .all-movies {
-  /* border: 3px solid red; */
   background-color: black;
   background-image: linear-gradient(
     -225deg,
@@ -16,13 +15,6 @@
 
 .all-movies-wrapper {
   background-color: black;
-  /* background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #231557 100%
-  ); */
   border-radius: 20px;
   margin-top: 30px;
   padding: 15px;
