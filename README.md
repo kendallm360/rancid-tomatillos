@@ -74,4 +74,4 @@ We tested our application with Cypress for full E2E testing. To set up Cypress:
 2. Run npm install -D cypress.
 3. Then run npm run cypress
 
-- ![Demo of Site Features](./src/rancid_gif1.mp4)
+- ![Demo of Site Features](./src/rancid_gif2.gif)
