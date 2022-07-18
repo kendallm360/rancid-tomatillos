@@ -16,13 +16,13 @@
 ### About the Project
 Welcome to Rancid Tomatillos!
 
-    In this application, we were assigned to build an IMDB style application to display a 
-list of movies from an API given to us by Turing instructors. We were given a week and 
+   
+In this application, we were assigned to build an IMDB style application to display a list of movies from an API given to us by Turing instructors. We were given a week and 
 a half to complete the website in React using Router, and testing with cypress, all new 
 tools for us that we were to learn for this project.
 
-    We were tasked with building a main page displaying all the movies as simplified cards,
-a details page where we display in depth information on a movie as chosen by the user. 
+    
+We were tasked with building a main page displaying all the movies as simplified cards, a details page where we display in depth information on a movie as chosen by the user. 
 we then were tasked with furthering our learning goals with some extensions, which we decided to embed trailers into our movie details page and extend our cypress testing to be more comprehensive.
 
 
@@ -33,20 +33,22 @@ You can click on a movie's card to view its information, and even watch a traile
 for that movie. If you click on the header, it will take you to the main page again.
 
 # Visualization
-- ![Demo of Site Features](https://media.giphy.com/media/SpfCbAfAPoQUyWlTqO/giphy.gif)
+![Demo of Site Features](https://media.giphy.com/media/SpfCbAfAPoQUyWlTqO/giphy.gif)
 
 
 ## Technologies Used
 
-1. JavaScript
-2. HTML
-3. CSS
-4. React
-5. Router
-6. Cypress
-7. Webpack
-9. NPM
-10. Figma and Figjam
+- React
+- React Router
+- React P
+- layer
+- JavaScript
+- HTML
+- CSS
+- Cypress
+- Webpack
+- NPM
+- Figma and Figjam
 
 ## Organizational Resources
 
