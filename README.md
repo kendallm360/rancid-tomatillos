@@ -73,3 +73,5 @@ We tested our application with Cypress for full E2E testing. To set up Cypress:
 1. Cd into the rancid-tomatillos directory.
 2. Run npm install -D cypress.
 3. Then run npm run cypress
+
+- ![Demo of Site Features](./src/rancid_gif1.mp4)
