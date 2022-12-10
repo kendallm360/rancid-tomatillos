@@ -25,6 +25,8 @@ tools for us that we were to learn for this project.
 We were tasked with building a main page displaying all the movies as simplified cards, a details page where we display in depth information on a movie as chosen by the user. 
 we then were tasked with furthering our learning goals with some extensions, which we decided to embed trailers into our movie details page and extend our cypress testing to be more comprehensive.
 
+## Deployed App:
+[Deployed App](https://rancid-tomatillos-xi.vercel.app/)
 
 ## Application in Action
 
